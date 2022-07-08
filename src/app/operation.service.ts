@@ -7,6 +7,7 @@ import {operation} from "./operation";
 })
 export class OperationService {
   operations: operation[]  = [];
+  balance: number = 0;
   constructor() { }
   getOperations(): Observable<operation[]>{
     return of(this.operations);

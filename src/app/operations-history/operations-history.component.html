@@ -1,29 +1,25 @@
-<div class="balance">
-  {{balance}}
-</div>
-<h1>Operations</h1>
-<div class="operation">
-  <input type="number" #operationAmount placeholder="Amount">
-  <input type="text" step="any" #operationDescription placeholder="Description">
-  <button type="button" (click)="add(operationDescription.value, operationAmount.valueAsNumber)">Выполнить</button>
-</div>
-<div class="operations-history">
-  <div class="operation-list">
-    <h2>Income</h2>
-    <div *ngFor="let operation of operations">
-      <div *ngIf="operation.amount>=0" class="operation-type" [ngClass]="operation.amount >= 0 ? 'income':''">
-        {{operation.amount}}
-        {{operation.description}}
+<section class="operations-history-section">
+  <div class="balance">
+    {{balance}}
+  </div>
+  <div class="operations-history">
+    <div class="income">
+      <p>Income</p>
+      <div *ngFor="let operation of operations">
+        <div *ngIf="operation.amount>=0" class="operation-type" [ngClass]="operation.amount >= 0 ? 'income':'income'">
+          {{operation.amount}}
+          {{operation.description}}
+        </div>
+      </div>
+    </div>
+    <div class="expense">
+      <p>Expenses</p>
+      <div *ngFor="let operation of operations">
+        <div *ngIf="operation.amount<0" class="operation-type" [ngClass]="operation.amount < 0 ? 'expenses': ''">
+          {{operation.amount}}
+          {{operation.description}}
+        </div>
       </div>
     </div>
   </div>
-  <h2>Expenses</h2>
-  <div class="operation-list">
-    <div *ngFor="let operation of operations">
-      <div *ngIf="operation.amount<0" class="operation-type" [ngClass]="operation.amount < 0 ? 'expenses': ''">
-        {{operation.amount}}
-        {{operation.description}}
-      </div>
-    </div>
-  </div>
-</div>
+</section>

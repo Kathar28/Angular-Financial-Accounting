@@ -19,18 +19,10 @@ export class OperationsHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getOperations();
+    this.balance = this.operationService.balance;
   }
 
   getOperations(): void {
     this.operationService.getOperations().subscribe(operations => this.operations = operations)
-  }
-
-  add(description: string, amount: number): void {
-    if (amount !== 0) {
-      if (this.balance < amount || this.balance === Math.abs(amount)) {
-        this.operationService.addOperation(description, amount);
-        this.balance += amount;
-      }
-    }
   }
 }

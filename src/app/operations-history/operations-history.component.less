@@ -1,56 +1,45 @@
-.operations-history div {
-  display: inline;
-  .operation-list {
-    grid-template-columns: 180px 180px;
-    width: 360px;
-    margin-left: 0;
-    padding-left: 0;
-    border: 1px solid rgb(0, 0, 0);
-    padding-left: 10px;
-    box-sizing: border-box;
-    .income {
-      color: green;
-    }
-    .expenses {
-      color: red;
-    }
+.operations-history-section {
+  padding: 50px;
+  height: 100%;
+  width: inherit;
+  .balance {
+    height: 100px;
+    width: inherit;
+    background-color: #264D73;
+    font-size: 50px;
+    line-height: 100px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .operations-history {
+    padding-top: 25px;
     display: flex;
-    margin-right: auto;
+    box-sizing: content-box;
+    justify-content: space-between;
+    .income{
+      grid-template-columns: 180px 180px;
+      margin-left: 0;
+      border: green solid;
+      height: 250px;
+      width: 50%;
+      color: green;
+      p{
+        padding-left: 10px;
+        border-bottom: black solid;
+      }
+    }
+    .expense{
+      grid-template-columns: 180px 180px;
+      margin-left: 0;
+      border: red solid;
+      height: 250px;
+      width: 50%;
+      color: red;
+      p{
+        padding-left: 10px;
+        border-bottom: black solid;
+      }
+    }
   }
-}
-
-.operation {
-  position: relative;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
-  align-items: center;
-  margin: auto;
-
-  .amount {
-
-  }
-
-  input {
-    //margin-right: 1em;
-    //box-sizing: border-box;
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-}
-
-.balance {
-  height: 100px;
-  width: 100%;
-  background-color: #264D73;
-  font-size: 50px;
-  line-height: 100px;
-  color: white;
-  text-align: center;
-  vertical-align: middle;
 }
