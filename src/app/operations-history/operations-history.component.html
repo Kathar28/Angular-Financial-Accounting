@@ -1,25 +1,21 @@
 <section class="operations-history-section">
-  <div class="balance">
-    {{balance}}
-  </div>
-  <div class="operations-history">
-    <div class="income">
-      <p>Income</p>
-      <div *ngFor="let operation of operations">
-        <div *ngIf="operation.amount>=0" class="operation-type" [ngClass]="operation.amount >= 0 ? 'income':'income'">
-          {{operation.amount}}
-          {{operation.description}}
-        </div>
-      </div>
-    </div>
-    <div class="expense">
-      <p>Expenses</p>
-      <div *ngFor="let operation of operations">
-        <div *ngIf="operation.amount<0" class="operation-type" [ngClass]="operation.amount < 0 ? 'expenses': ''">
-          {{operation.amount}}
-          {{operation.description}}
-        </div>
-      </div>
-    </div>
+  <h2>Amount</h2>
+  <div class="balance">{{balance}}</div>
+  <div [hidden]="operations.length === 0">
+    <h2>Operations</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Amount</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let operation of operations">
+      <tr [ngClass]="operation.amount > 0 ? 'income' : 'expense'">
+        <th>{{operation.amount}}</th>
+        <th>{{operation.description}}</th>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </section>

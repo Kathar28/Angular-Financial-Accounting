@@ -1,6 +1,6 @@
 <h2>New operation</h2>
 <div class="operation">
-  <input type="number" #operationAmount placeholder="Amount">
-  <input type="text" step="any" #operationDescription placeholder="Description">
+  <input class="amount" type="number" #operationAmount placeholder="Amount">
+  <input class="description" type="text" step="any" #operationDescription placeholder="Description">
   <button type="button" (click)="add(operationDescription.value, operationAmount.valueAsNumber)">Execute</button>
 </div>
