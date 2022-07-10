@@ -1,6 +1,8 @@
 <h2>New operation</h2>
 <form class="operation">
-  <input class="amount" type="number" title="Enter plus to deposit or minus to withdraw" name="amount" #inputAmount='ngModel' [(ngModel)]="amount" placeholder="Amount" >
-  <input class="description" type="text" step="any" name="description" #inputDescription='ngModel' [(ngModel)]="description" placeholder="Description">
-  <button type="submit"(click)="addOperation()">Add</button>
+  <input class="amount" type="number" title="Enter plus to deposit or minus to withdraw" name="amount"
+         #inputAmount='ngModel' [(ngModel)]="amount" placeholder="Amount">
+  <input class="description" type="text" step="any" name="description" #inputDescription='ngModel'
+         [(ngModel)]="description" placeholder="Description">
+  <button type="submit" (click)="addOperation()">Add</button>
 </form>

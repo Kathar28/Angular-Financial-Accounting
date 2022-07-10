@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, of} from "rxjs";
 import {operation} from "./operation";
 
@@ -6,13 +6,17 @@ import {operation} from "./operation";
   providedIn: 'root'
 })
 export class OperationService {
-  operations: operation[]  = [];
+  operations: operation[] = [];
   balance: number = 0;
-  constructor() { }
-  getOperations(): Observable<operation[]>{
+
+  constructor() {
+  }
+
+  getOperations(): Observable<operation[]> {
     return of(this.operations);
   }
-  addOperation(description:string, amount:number): void{
-    this.operations.push({description,  amount} as operation)
+
+  addOperation(description: string, amount: number): void {
+    this.operations.push({description, amount} as operation)
   }
 }

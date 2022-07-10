@@ -1,19 +1,19 @@
 <section class="operations-history-section">
   <h2>Balance</h2>
   <div class="balance">{{balance}}</div>
-    <h2 [hidden]="operations.length === 0">Operations</h2>
-    <table [hidden]="operations.length === 0">
-      <thead>
-      <tr>
-        <th width="25%">Amount</th>
-        <th>Description</th>
-      </tr>
-      </thead>
-      <tbody *ngFor="let operation of operations">
-      <tr [ngClass]="operation.amount > 0 ? 'income' : 'expense'">
-        <th>{{operation.amount}}</th>
-        <th>{{operation.description}}</th>
-      </tr>
-      </tbody>
-    </table>
+  <h2 [hidden]="operations.length === 0">Operations</h2>
+  <table [hidden]="operations.length === 0">
+    <thead>
+    <tr>
+      <th width="25%">Amount</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let operation of operations">
+    <tr [ngClass]="operation.amount > 0 ? 'income' : 'expense'">
+      <th>{{operation.amount}}</th>
+      <th>{{operation.description}}</th>
+    </tr>
+    </tbody>
+  </table>
 </section>

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OperationsHistoryComponent } from './operations-history.component';
+import {OperationsHistoryComponent} from './operations-history.component';
 
 describe('OperationsHistoryComponent', () => {
   let component: OperationsHistoryComponent;
@@ -8,9 +8,9 @@ describe('OperationsHistoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OperationsHistoryComponent ]
+      declarations: [OperationsHistoryComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(OperationsHistoryComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {OperationService} from "../operation.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
@@ -8,10 +8,11 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./new-operation.component.less']
 })
 export class NewOperationComponent implements OnInit {
-    amount: number = 0;
-    description: string = '';
+  amount: number = 0;
+  description: string = '';
 
-  constructor(private operationService: OperationService, private snackBar: MatSnackBar) { }
+  constructor(private operationService: OperationService, private snackBar: MatSnackBar) {
+  }
 
   ngOnInit(): void {
   }
@@ -19,7 +20,7 @@ export class NewOperationComponent implements OnInit {
   addOperation(): void {
     if (this.amount === 0 || this.amount === null || this.description === '') {
       this.snackBar.open("Invalid values", '', {duration: 3000})
-    }else if (this.operationService.balance + this.amount >= 0){
+    } else if (this.operationService.balance + this.amount >= 0) {
       this.operationService.addOperation(this.description, this.amount);
       this.operationService.balance += this.amount;
       this.snackBar.open("The operation was completed successfully", '', {duration: 3000})

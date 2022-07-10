@@ -1,12 +1,14 @@
-h2{
+h2 {
   padding-left: 8px;
 }
+
 .operation {
   position: relative;
   display: flex;
   flex-wrap: nowrap;
   justify-content: left;
   align-items: center;
+
   .amount {
     width: 30%;
     padding: 12px 20px;
@@ -15,11 +17,13 @@ h2{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    [data-title]:hover:after{
+
+    [data-title]:hover:after {
       opacity: 1;
       transition: all 0.1s ease 0.5s;
       visibility: visible;
     }
+
     [data-title]:after {
       content: attr(data-title);
       background-color: #00FF00;
@@ -36,10 +40,12 @@ h2{
       z-index: 99999;
       visibility: hidden;
     }
+
     [data-title] {
       position: relative;
     }
   }
+
   .description {
     //margin-right: 1em;
     //box-sizing: border-box;
