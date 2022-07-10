@@ -7,17 +7,18 @@ import {OperationService} from "../operation.service";
   styleUrls: ['./new-operation.component.less']
 })
 export class NewOperationComponent implements OnInit {
+    amount: number = 0;
+    description: string = '';
 
   constructor(private operationService: OperationService) { }
 
   ngOnInit(): void {
   }
 
-  add(description: string, amount: number): void {
-    if (amount === 0) {
-    } else if (this.operationService.balance + amount >= 0) {
-      this.operationService.addOperation(description, amount);
-      this.operationService.balance += amount;
+  addOperation(): void {
+    if (this.amount !== 0 && this.operationService.balance + this.amount >= 0) {
+      this.operationService.addOperation(this.description, this.amount);
+      this.operationService.balance += this.amount;
     }
   }
 

@@ -1,6 +1,6 @@
 <h2>New operation</h2>
-<div class="operation">
-  <input class="amount" type="number" #operationAmount placeholder="Amount">
-  <input class="description" type="text" step="any" #operationDescription placeholder="Description">
-  <button type="button" (click)="add(operationDescription.value, operationAmount.valueAsNumber)">Execute</button>
-</div>
+<form class="operation">
+  <input class="amount" type="number" title="Enter plus to deposit or minus to withdraw" name="amount" #inputAmount='ngModel' [(ngModel)]="amount" placeholder="Amount" >
+  <input class="description" type="text" step="any" name="description" #inputDescription='ngModel' [(ngModel)]="description" placeholder="Description">
+  <input type="submit" [disabled]="inputAmount.value === 0 && inputDescription.value === '' && inputAmount.value === null" (click)="addOperation()" value="Add">
+</form>
