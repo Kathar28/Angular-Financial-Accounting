@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NewOperationComponent } from './new-operation/new-operation.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

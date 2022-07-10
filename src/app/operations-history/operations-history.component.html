@@ -1,12 +1,11 @@
 <section class="operations-history-section">
   <h2>Balance</h2>
   <div class="balance">{{balance}}</div>
-  <div [hidden]="operations.length === 0">
-    <h2>Operations</h2>
-    <table class="table">
+    <h2 [hidden]="operations.length === 0">Operations</h2>
+    <table [hidden]="operations.length === 0">
       <thead>
       <tr>
-        <th>Amount</th>
+        <th width="25%">Amount</th>
         <th>Description</th>
       </tr>
       </thead>
@@ -17,5 +16,4 @@
       </tr>
       </tbody>
     </table>
-  </div>
 </section>
